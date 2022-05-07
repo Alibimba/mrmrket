@@ -129,9 +129,12 @@ cardes.forEach(function(card){
 
 
 
-    let slide1 = document.querySelector('#slide1');
-    let slide2 = document.querySelector('#slide2');
-    let slide3 = document.querySelector('#slide3');
+    let slide1 = document.querySelector('#shlep');
+    let slide2 = document.querySelector('#svin');
+    let slide3 = document.querySelector('#lgbt');
+    let sl1 = document.querySelector('#slide-1');
+    let sl2 = document.querySelector('#slide-2');
+    let sl3 = document.querySelector('#slide-3');
     let currslide = 1;
 
     let arrows = document.querySelectorAll('.arrow');
@@ -144,14 +147,23 @@ cardes.forEach(function(card){
                     currslide = 3;
                     slide1.style.display='none';
                     slide3.style.display='flex';
+                    sl2.classList.remove('active')
+                    sl1.classList.remove('active')
+                    sl3.classList.add('active')
                 }else if (currslide === 2){
                     currslide = 1;
                     slide2.style.display='none';
                     slide1.style.display='flex';
+                    sl2.classList.remove('active')
+                    sl1.classList.add('active')
+                    sl3.classList.remove('active')
                 }else if (currslide ===3){
                     currslide = 2;
                     slide3.style.display='none';
                     slide2.style.display='flex';
+                    sl2.classList.add('active')
+                    sl1.classList.remove('active')
+                    sl3.classList.remove('active')
                 }
                 console.log(currslide)
             })
@@ -162,19 +174,57 @@ cardes.forEach(function(card){
                     currslide = 2;
                     slide1.style.display='none';
                     slide2.style.display='flex';
+                    sl2.classList.add('active')
+                    sl1.classList.remove('active')
+                    sl3.classList.remove('active')
                 }else if (currslide === 2){
                     currslide = 3;
                     slide2.style.display='none';
                     slide3.style.display='flex';
+                    sl2.classList.remove('active')
+                    sl1.classList.remove('active')
+                    sl3.classList.add('active')
                 }else if (currslide ===3){
                     currslide = 1
                     slide3.style.display='none';
                     slide1.style.display='flex';
+                    sl2.classList.remove('active')
+                    sl1.classList.add('active')
+                    sl3.classList.remove('active')
                 }
                 console.log(currslide)
             })
         }
 
     });
+
+    sl1.addEventListener('click', function (){
+        sl2.classList.remove('active')
+        sl1.classList.add('active')
+        sl3.classList.remove('active')
+        currslide = 1;
+        slide2.style.display='none';
+        slide3.style.display='none';
+        slide1.style.display='flex';
+    })
+    sl2.addEventListener('click', function (){
+        sl2.classList.add('active')
+        sl1.classList.remove('active')
+        sl3.classList.remove('active')
+        currslide = 2;
+        slide3.style.display='none';
+        slide1.style.display='none';
+        slide2.style.display='flex';
+    })
+    sl3.addEventListener('click', function (){
+        sl2.classList.remove('active')
+        sl1.classList.remove('active')
+        sl3.classList.add('active')
+        currslide = 3;
+        slide2.style.display='none';
+        slide1.style.display='none';
+        slide3.style.display='flex';
+    })
+
 
 });
