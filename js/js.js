@@ -48,7 +48,7 @@ let productList = [
         title: 'Пиво',
         price: '675',
         description: 'Aboba',
-        image: 'images/1 tapochek.jpg',
+        image: 'images/svin.jpg',
         card:1,
     },
     {
@@ -56,15 +56,15 @@ let productList = [
         title: 'Рыба',
         price: '2',
         description: 'Aboba',
-        image: 'images/2 tapochek.jpg',
+        image: 'images/orien.jpg',
         card:2,
     },
     {
         id:3,
-        title: 'Чивапчичи',
+        title: 'Пельмени',
         price: '2500',
         description: 'Aboba',
-        image: 'images/3 tapochek.jpg',
+        image: 'images/shlepa.jpg',
         card:3,
     },
     {
@@ -72,23 +72,23 @@ let productList = [
         title: 'Чивапчичи',
         price: '2500',
         description: 'Aboba',
-        image: 'images/3 tapochek.jpg',
+        image: 'images/britan.jpg',
         card:4,
     },
     {
         id:5,
-        title: 'Чивапчичи',
+        title: 'Кумыс',
         price: '2500',
         description: 'Aboba',
-        image: 'images/3 tapochek.jpg',
+        image: 'images/sims.jpg',
         card:5,
     },
     {
         id:6,
-        title: 'Чивапчичи',
+        title: 'Вата',
         price: '2500',
         description: 'Aboba',
-        image: 'images/3 tapochek.jpg',
+        image: 'images/angora.jpg',
         card:6,
     },
 ]
@@ -118,10 +118,11 @@ let cartes = document.querySelectorAll('.product_card_addcart');
 cartes.forEach(function(cart) {
     cart.addEventListener('click', function () {
         let id = Number(cart.parentNode.parentNode.parentNode.id);
-
-        // console.log(id)
-        console.log(productList[id - 1])
+        let currProd = productList[id-1];
         productCart.push(productList[id-1])
+        // генерация блока
+
+
     })
 });
 
