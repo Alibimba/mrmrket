@@ -114,20 +114,33 @@ likes.forEach(function(like){
 
     })
 });
-let carzina = [
-
-]
+let carzina = [];
 let aga = document.querySelector('.content_cart_container');
 let cartes = document.querySelectorAll('.product_card_addcart');
+
 cartes.forEach(function(cart) {
     cart.addEventListener('click', function () {
         let id = Number(cart.parentNode.parentNode.parentNode.id);
-        let currProd = productList[id-1];
-        productCart.push(productList[id-1])
+        let repeatProd = false
+        carzina.forEach(function (el, i) {
+            if (el.id === productList[id-1].id) {
+                el.count++;
+                repeatProd = true;
+            }
+        });
+        if (!repeatProd) {
+            let currProd = productList[id-1];
+            currProd.count = 1
+            carzina.push(currProd);
+        }
+
+        // productCart.push(productList[id-1])
         // генерация блока
-        carzina.push(id, currProd)
-        console.log(carzina)
-        aga.innerHTML = carzina
+        aga.innerHTML = '';
+        carzina.forEach(function (el) {
+            let block = document.createElement('div');
+            aga.innerHTML += el.count + el.title;
+        })
     })
 });
 
