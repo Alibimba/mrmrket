@@ -49,7 +49,7 @@ let productList = [
         price: '10',
         description: 'Aboba',
         image: 'images/svin.jpg',
-        card:1,
+        card:' ',
     },
     {
         id:2,
@@ -57,7 +57,7 @@ let productList = [
         price: '2000',
         description: 'Aboba',
         image: 'images/orien.jpg',
-        card:2,
+        card:' ',
     },
     {
         id:3,
@@ -65,7 +65,7 @@ let productList = [
         price: '500',
         description: 'Aboba',
         image: 'images/shlepa.jpg',
-        card:3,
+        card:' ',
     },
     {
         id:4,
@@ -73,7 +73,7 @@ let productList = [
         price: '1000',
         description: 'Aboba',
         image: 'images/britan.jpg',
-        card:4,
+        card:' ',
     },
     {
         id:5,
@@ -81,7 +81,7 @@ let productList = [
         price: '25000',
         description: 'Aboba',
         image: 'images/sims.jpg',
-        card:5,
+        card:' ',
     },
     {
         id:6,
@@ -89,7 +89,7 @@ let productList = [
         price: '2',
         description: 'Aboba',
         image: 'images/angora.jpg',
-        card:6,
+        card:' ',
     },
 ]
 let productCart = [
@@ -116,8 +116,8 @@ likes.forEach(function(like){
 });
 let carzina = [];
 let aga = document.querySelector('.content_cart_container');
+let kvadrat = document.querySelector('.kvadrat');
 let cartes = document.querySelectorAll('.product_card_addcart');
-
 cartes.forEach(function(cart) {
     cart.addEventListener('click', function () {
         let id = Number(cart.parentNode.parentNode.parentNode.id);
@@ -139,7 +139,7 @@ cartes.forEach(function(cart) {
         aga.innerHTML = '';
         carzina.forEach(function (el) {
             let block = document.createElement('div');
-            aga.innerHTML += el.count + el.title;
+            aga.innerHTML += '<div class="kvadrat"></div> ' + el.count + '  ' + el.title + '<br>' + '<br>' + '<br>' ;
         })
     })
 });
