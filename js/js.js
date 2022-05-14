@@ -145,6 +145,8 @@ cartes.forEach(function(cart) {
             let forText = document.createElement('div');
             let priceTitle = document.createElement('div');
             let crest = document.createElement('div');
+            let count = document.createElement('span');
+            let nomer = document.createElement('input');
             kvadrat.classList.add('kvadrat');
             cart.classList.add('cart-card');
             cartt.classList.add('cart-card-container');
@@ -152,6 +154,8 @@ cartes.forEach(function(cart) {
             forText.classList.add('cart-card-text');
             priceTitle.classList.add('cart-card-text-price');
             crest.classList.add('close-btn');
+            count.classList.add('cart-card-count');
+            nomer.classList.add('nomer');
             aga.appendChild(cart)
             cart.appendChild(cartt)
             cartt.appendChild(kvadrat)
@@ -160,10 +164,13 @@ cartes.forEach(function(cart) {
             forText.appendChild(titlePrice)
             forText.appendChild(priceTitle)
             cart.appendChild(crest)
-            kvadrat.innerHTML += el.count;
-            crest.innerHTML += 'X';
+            kvadrat.appendChild(count)
+            count.appendChild(nomer)
+
+            crest.innerHTML += '<b>X</b>';
             titlePrice.innerHTML += el.title;
             priceTitle.innerHTML += el.price + ' Рубликов';
+            nomer.innerHTML += el.count;
 
         })
     })
