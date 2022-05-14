@@ -294,6 +294,7 @@ div {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 10px;
 }
 
 .cart-card-container {
@@ -308,4 +309,13 @@ div {
 
 .cart-card-text > * {
     margin-left: 20px;
+}
+.close-btn{
+    cursor: pointer;
+}
+.crest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }

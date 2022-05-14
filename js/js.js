@@ -116,7 +116,7 @@ likes.forEach(function(like){
 });
 let carzina = [];
 let aga = document.querySelector('.content_cart_container');
-let kvadrat = document.querySelector('.kvadrat');
+
 let cartes = document.querySelectorAll('.product_card_addcart');
 cartes.forEach(function(cart) {
     cart.addEventListener('click', function () {
@@ -138,8 +138,33 @@ cartes.forEach(function(cart) {
         // генерация блока
         aga.innerHTML = '';
         carzina.forEach(function (el) {
-            let block = document.createElement('div');
-            aga.innerHTML += '<div class="kvadrat"></div> ' + el.count + '  ' + el.title + '<br>' + '<br>' + '<br>' ;
+            let kvadrat = document.createElement('div');
+            let titlePrice = document.createElement('div');
+            let cart = document.createElement('div');
+            let cartt = document.createElement('div');
+            let forText = document.createElement('div');
+            let priceTitle = document.createElement('div');
+            let crest = document.createElement('div');
+            kvadrat.classList.add('kvadrat');
+            cart.classList.add('cart-card');
+            cartt.classList.add('cart-card-container');
+            titlePrice.classList.add('cart-card-text-title');
+            forText.classList.add('cart-card-text');
+            priceTitle.classList.add('cart-card-text-price');
+            crest.classList.add('close-btn');
+            aga.appendChild(cart)
+            cart.appendChild(cartt)
+            cartt.appendChild(kvadrat)
+            cartt.appendChild(titlePrice)
+            cartt.appendChild(forText)
+            forText.appendChild(titlePrice)
+            forText.appendChild(priceTitle)
+            cart.appendChild(crest)
+            kvadrat.innerHTML += el.count;
+            crest.innerHTML += 'X';
+            titlePrice.innerHTML += el.title;
+            priceTitle.innerHTML += el.price + ' Рубликов';
+
         })
     })
 });
